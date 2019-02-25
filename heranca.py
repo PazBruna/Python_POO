@@ -34,7 +34,6 @@ class Filme(Programa): #herdando classe
         super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
         self.duracao = duracao
         
-
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
