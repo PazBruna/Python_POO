@@ -27,7 +27,8 @@ class Programa:
 
     def recomendar(self):
         self._recomendado += 1
-    
+
+
 
 class Filme(Programa): #herdando classe
     def __init__(self, nome, ano, duracao):
@@ -39,7 +40,7 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
         
-   
+        
 vingadores = Filme('Vingadores', 2018, 160)
 pantera = Filme('Pantera', 2018, 95)
 supernatural = Serie('Supernatural', 2018 , 13)

@@ -53,6 +53,7 @@ print(f'Nome: {vingadores.nome} - Ano: {vingadores.ano}'
 
 atlanta = Serie('Atlanta', 2018, 2)
 
+
 atlanta.dar_like()
 atlanta.dar_like()
 atlanta.dar_like()

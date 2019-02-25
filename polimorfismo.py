@@ -30,8 +30,6 @@ class Programa:
     def imprime(self):
         print(f'{self._nome} - {self.ano} - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
 
-    
-
 class Filme(Programa): #herdando classe
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
@@ -48,7 +46,6 @@ class Serie(Programa):
     def imprime(self):
         print(f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
 
-   
 vingadores = Filme('Vingadores', 2018, 160)
 pantera = Filme('Pantera', 2018, 95)
 supernatural = Serie('Supernatural', 2018 , 13)
