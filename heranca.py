@@ -31,23 +31,16 @@ class Programa:
 
 class Filme(Programa): #herdando classe
     def __init__(self, nome, ano, duracao):
-        self._nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
         self.duracao = duracao
-        self._likes = 0
-        self._recomendado = 0
-
-   
+        
 
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
-        self._nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano)
         self.temporadas = temporadas
-        self._likes = 0
-        self._recomendado = 0
-
-    
+        
+   
 vingadores = Filme('Vingadores', 2018, 160)
 pantera = Filme('Pantera', 2018, 95)
 supernatural = Serie('Supernatural', 2018 , 13)
