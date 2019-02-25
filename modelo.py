@@ -5,7 +5,7 @@ class Filme:
         self.duracao = duracao
         self.__likes = 0
 
-    @property
+    @property 
     def likes(self):
         return self.__likes
 
