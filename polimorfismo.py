@@ -26,18 +26,28 @@ class Programa:
 
     def recomendar(self):
         self._recomendado += 1
+
+    def imprime(self):
+        print(f'{self._nome} - {self.ano} - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+
     
 
 class Filme(Programa): #herdando classe
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
         self.duracao = duracao
-        
+    
+    def imprime(self):
+        print(f'{self._nome} - {self.ano} - Duração: {self.duracao}min - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+  
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
-        
+    
+    def imprime(self):
+        print(f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+
    
 vingadores = Filme('Vingadores', 2018, 160)
 pantera = Filme('Pantera', 2018, 95)
@@ -50,15 +60,9 @@ supernatural.recomendar()
 vingadores.dar_like()
 pantera.recomendar()
 
-print(f'{vingadores.nome} - {vingadores.ano} - Duração: {vingadores.duracao} - Likes: {vingadores.likes} - Recomendado: {vingadores.recomendado} vezes')
-print(f'{pantera.nome} - {pantera.ano} - Duração: {pantera.duracao} - Likes: {pantera.likes} Recomendado: {pantera.recomendado} vezes')
-print(f'{supernatural.nome} - {supernatural.ano} - Duração: {supernatural.temporadas} - Likes: {supernatural.likes} Recomendado: {supernatural.recomendado} vezes')
-
 filmes_series = [vingadores, pantera, supernatural]
 
 for programa in filmes_series:
-    detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporadas #verifica se o filme ou a serie tem duração senão imprime a temporada
-    print(f'{programa.nome} - {detalhes} -{programa.ano} - Likes: {programa.likes} - Recomendado: {programa.recomendado} vezes')
-    
+    programa.imprime()
 
 
