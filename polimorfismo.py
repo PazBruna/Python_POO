@@ -17,7 +17,7 @@ class Programa:
         return self._nome
     
     @nome.setter
-    def novo_nome(self, novo_nome): #encapsulando o comportamento do nome iniciar com letra mai
+    def novo_nome(self, novo_nome): #encapsulando o comportamento do nome iniciar com letra maiuscula
         self._nome = novo_nome.title()
     
     @property
@@ -62,4 +62,4 @@ filmes_series = [vingadores, pantera, supernatural]
 for programa in filmes_series:
     programa.imprime()
 
-
+print(isinstance(vingadores, Serie))
