@@ -52,7 +52,7 @@ class Playlist: #removeu herança list para remover complexidade
         self._programas = programas
     
     def __getitem__(self, item): #repassando um item para minha lista de programas interna
-        return self._programas[item]
+        return self._programas[item] #define alguem que é iteravel
 
     @property
     def listagem(self):
