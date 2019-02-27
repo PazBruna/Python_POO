@@ -46,7 +46,7 @@ class Serie(Programa):
     def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
-class Playlist:
+class Playlist: 
     def __init__(self, nome, programas):
         self.nome = nome
         self.programas = programas
@@ -65,7 +65,7 @@ pantera.dar_like()
 supernatural.dar_like()
 supernatural.dar_like()
 supernatural.recomendar()
-supernatural.recomendar()
+supernatural.recomendar() 
 supernatural.recomendar()
 vingadores.dar_like()
 pantera.recomendar()
@@ -81,6 +81,6 @@ playlist_fds = Playlist('Fim de Semana', playlist)
 for programa in playlist_fds.programas:
   print(programa)
 
-print(isinstance(vingadores, Serie)) #False #verificar se o objeto vingadores pertence a classe serie
+print(isinstance(vingadores, Filme)) #True #verificar se o objeto vingadores pertence a classe serie
 
 
