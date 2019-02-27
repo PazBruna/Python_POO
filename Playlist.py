@@ -46,10 +46,18 @@ class Serie(Programa):
     def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
-class Playlist(list): #herdando list, após isso a playlist poderá ser utilizada como list em qualquer lugar.
+class Playlist: #removeu herança list para remover complexidade
     def __init__(self, nome, programas):
         self.nome = nome
-        super().__init__(programas) 
+        self._programas = programas
+        
+    @property
+    def listagem(self):
+        return self._programas
+
+    @property
+    def tamanho(self):
+        return len(self._programas)
 
 vingadores = Filme('Vingadores', 2018, 160)
 panico = Filme('Todo mundo em panico', 1999, 100)
@@ -74,13 +82,13 @@ demolidor.dar_like()
 playlist = [vingadores, panico, pantera, supernatural, demolidor]
 playlist_fds = Playlist('Fim de Semana', playlist)
 
-print(f'Tamanho da playlist: {len(playlist_fds)}')
+print(f'Tamanho da playlist: {len(playlist_fds.listagem)}')
 
-for programa in playlist_fds: #iterar sobre alguma listagem
+for programa in playlist_fds.listagem: #iterar sobre alguma listagem
   print(programa)
 
 print(isinstance(vingadores, Filme)) #True #verificar se o objeto vingadores pertence a classe serie
 
-print(demolidor in playlist_fds) #verificando se demolidor esta na playlist(boolean)
+print(demolidor in playlist_fds.listagem) #verificando se demolidor esta na playlist(boolean)
 
 
