@@ -27,24 +27,24 @@ class Programa:
     def recomendar(self):
         self._recomendado += 1
 
-    def imprime(self):
-        print(f'{self._nome} - {self.ano} - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+    def __str__(self): #Retorna esse dado como string
+        return f'{self._nome} - {self.ano} - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
 class Filme(Programa): #herdando classe
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
         self.duracao = duracao
     
-    def imprime(self):
-        print(f'{self._nome} - {self.ano} - Duração: {self.duracao}min - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - Duração: {self.duracao}min - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
   
 class Serie(Programa):
     def __init__(self, nome, ano, temporadas):
         super().__init__(nome, ano)
         self.temporadas = temporadas
     
-    def imprime(self):
-        print(f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes')
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
 vingadores = Filme('Vingadores', 2018, 160)
 pantera = Filme('Pantera', 2018, 95)
@@ -60,6 +60,6 @@ pantera.recomendar()
 filmes_series = [vingadores, pantera, supernatural]
 
 for programa in filmes_series:
-    programa.imprime()
+  print(programa)
 
-print(isinstance(vingadores, Serie))
+print(isinstance(vingadores, Serie)) #False
