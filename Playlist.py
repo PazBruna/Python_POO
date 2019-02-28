@@ -51,15 +51,14 @@ class Playlist: #removeu herança list para remover complexidade
         self.nome = nome
         self._programas = programas
     
-    def __getitem__(self, item): #repassando um item para minha lista de programas interna
+    def __getitem__(self, item): #repassando um item para minha lista de programas interna #duck typing
         return self._programas[item] #define alguem que é iteravel
 
     @property
     def listagem(self):
         return self._programas
 
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
 
 vingadores = Filme('Vingadores', 2018, 160)
@@ -85,14 +84,15 @@ demolidor.dar_like()
 playlist = [vingadores, panico, pantera, supernatural, demolidor]
 playlist_fds = Playlist('Fim de Semana', playlist)
 
-print(f'Tamanho da playlist: {len(playlist_fds.listagem)}')
+print(f'Tamanho da playlist: {len(playlist_fds)}')
 
 print(playlist_fds[0]) #primeiro item
+
 
 for programa in playlist_fds: #iterar sobre alguma listagem
   print(programa)
 
-print(isinstance(vingadores, Filme)) #True #verificar se o objeto vingadores pertence a classe serie
+print(isinstance(vingadores, Filme)) #True #verificar se o objeto vingadores pertence a classe Filme
 
 print(demolidor in playlist_fds) #verificando se demolidor esta na playlist(boolean)
 
