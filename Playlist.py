@@ -17,7 +17,7 @@ class Programa:
         return self._nome
     
     @nome.setter
-    def novo_nome(self, novo_nome): #encapsulando o comportamento do nome iniciar com letra maiuscula
+    def novo_nome(self, novo_nome): #Encapsulando o comportamento do nome iniciar com letra maiuscula
         self._nome = novo_nome.title()
     
     @property
@@ -30,7 +30,7 @@ class Programa:
     def __str__(self): #Retorna esse dado como string
         return f'{self._nome} - {self.ano} - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
-class Filme(Programa): #herdando classe
+class Filme(Programa): #Herdando classe
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano) #Chamando o inicializador da classe "mãe" 
         self.duracao = duracao
@@ -46,13 +46,13 @@ class Serie(Programa):
     def __str__(self):
         return f'{self._nome} - {self.ano} - {self.temporadas} Temporadas - Likes: {self._likes} - Recomendado: {self._recomendado} vezes'
 
-class Playlist: #removeu herança list para remover complexidade
+class Playlist: #Removeu herança list para remover complexidade
     def __init__(self, nome, programas):
         self.nome = nome
         self._programas = programas
     
-    def __getitem__(self, item): #repassando um item para minha lista de programas interna #duck typing
-        return self._programas[item] #define alguem que é iteravel
+    def __getitem__(self, item): #Repassando um item para minha lista de programas interna #duck typing
+        return self._programas[item] #Define alguem que é iteravel
 
     @property
     def listagem(self):
@@ -86,14 +86,14 @@ playlist_fds = Playlist('Fim de Semana', playlist)
 
 print(f'Tamanho da playlist: {len(playlist_fds)}')
 
-print(playlist_fds[0]) #primeiro item
+print(playlist_fds[0]) #Primeiro item
 
 
-for programa in playlist_fds: #iterar sobre alguma listagem
+for programa in playlist_fds: #Iterar sobre alguma listagem
   print(programa)
 
 print(isinstance(vingadores, Filme)) #True #verificar se o objeto vingadores pertence a classe Filme
 
-print(demolidor in playlist_fds) #verificando se demolidor esta na playlist(boolean)
+print(demolidor in playlist_fds) #Verificando se demolidor esta na playlist(boolean)
 
 
